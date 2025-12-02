@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400;500;600&family=Roboto+Mono:wght@400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #0F0F0F; /* bg-background */
+    color: #F9EFEC; /* text-text-main */
+    font-family: 'Roboto Flex', sans-serif;
+  }
+}
+
+@layer components {
+  /* Typography utilities for consistent font weights */
+  .text-title {
+    @apply font-semibold; /* 600 for titles */
+  }
+
+  .text-medium-title {
+    @apply font-medium; /* 500 for medium titles */
+  }
+
+  .text-paragraph {
+    @apply font-normal; /* 400 for paragraphs */
+  }
+
+  /* Marquee animation */
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+}

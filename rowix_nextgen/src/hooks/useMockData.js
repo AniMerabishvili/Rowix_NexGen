@@ -37,6 +37,7 @@ export const useMockData = (dataKey = null) => {
 // Convenience hooks for specific data sections
 export const useHeroData = () => useMockData('hero');
 export const useStatsData = () => useMockData('stats');
+export const useWhyUsData = () => useMockData('whyUs');
 export const useServicesData = () => useMockData('services');
 export const useWorksData = () => useMockData('works');
 export const useTestimonialsData = () => useMockData('testimonials');

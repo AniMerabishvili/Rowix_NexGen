@@ -44,7 +44,7 @@ export default function Stats() {
         ))}
         
         {/* Action Card (6th card - Know More) */}
-        <div className="bg-surface rounded-2xl p-3 flex flex-col items-center justify-center text-center gap-3">
+        <div className="bg-surface rounded-2xl p-10 flex flex-col items-center justify-center text-center gap-3">
           
           {/* Icon and Text Row */}
           <div className="flex items-center gap-2">

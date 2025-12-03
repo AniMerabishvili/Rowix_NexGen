@@ -1,5 +1,6 @@
 import React from 'react';
 import { StatCardProps } from '../../types';
+import Counter from './Counter';
 
 export default function StatCard({ label, value, isLoading = false }: StatCardProps) {
   if (isLoading) {
@@ -20,7 +21,7 @@ export default function StatCard({ label, value, isLoading = false }: StatCardPr
       
       {/* Value */}
       <div className="text-light-orange text-4xl font-semibold leading-none">
-        {value}
+        <Counter value={value} />
       </div>
     </div>
   );

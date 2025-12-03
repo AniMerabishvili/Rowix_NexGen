@@ -22,7 +22,7 @@ export default function Footer(): React.JSX.Element {
         </div>
         
         {/* Marquee Strip */}
-        <div className="overflow-hidden bg-background py-4 mb-4 border-y border-surface">
+        <div className="overflow-hidden bg-surface py-4 mb-4 border-y border-surface">
           <div className="animate-marquee whitespace-nowrap">
             <span className="text-text-muted text-sm font-mono uppercase tracking-widest">
               {marqueeItems.join(' • ')}
@@ -33,18 +33,18 @@ export default function Footer(): React.JSX.Element {
         {/* Main Content Loading - Bento Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 animate-pulse">
           {/* ROW 1 */}
-          <div className="col-span-12 lg:col-span-4 grid grid-cols-2 gap-4">
+          <div className="col-span-12 lg:col-span-5 grid grid-cols-2 gap-4">
             <div className="bg-surface rounded-3xl aspect-square"></div>
             <div className="bg-surface rounded-3xl aspect-square"></div>
           </div>
-          <div className="col-span-12 lg:col-span-8 bg-surface rounded-3xl p-8 h-full"></div>
+          <div className="col-span-12 lg:col-span-7 bg-surface rounded-3xl p-8 h-full"></div>
           
           {/* ROW 2 */}
-          <div className="col-span-12 lg:col-span-4 grid grid-cols-2 gap-4">
+          <div className="col-span-12 lg:col-span-5 grid grid-cols-2 gap-4">
             <div className="bg-surface rounded-3xl aspect-square"></div>
             <div className="bg-surface rounded-3xl aspect-square"></div>
           </div>
-          <div className="col-span-12 lg:col-span-8 flex flex-col gap-4">
+          <div className="col-span-12 lg:col-span-7 flex flex-col gap-4">
             <div className="bg-surface rounded-3xl p-8 flex-grow"></div>
             <div className="bg-surface rounded-3xl p-6"></div>
           </div>
@@ -71,7 +71,7 @@ export default function Footer(): React.JSX.Element {
       <CTA />
       
       {/* Social Media Marquee Strip */}
-      <div className="overflow-hidden bg-background py-4 my-4 border-y border-surface">
+      <div className="overflow-hidden bg-surface py-4 my-4 border-y border-surface">
         <div className="flex items-center gap-8 animate-marquee whitespace-nowrap">
           {marqueeItems.map((text, index) => (
             <React.Fragment key={index}>
@@ -87,17 +87,16 @@ export default function Footer(): React.JSX.Element {
       {/* Main Footer Content - Bento Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
         
-        {/* ========== ROW 1 ========== */}
         
         {/* Left Side - Instagram & Twitter */}
-        <div className="col-span-12 lg:col-span-4 grid grid-cols-2 gap-4">
+        <div className="col-span-12 lg:col-span-5 grid grid-cols-2 gap-4">
           {topSocials.map((social) => (
             <SocialCard key={social.id} social={social} />
           ))}
         </div>
         
         {/* Right Side - Pages/Links */}
-        <div className="col-span-12 lg:col-span-8">
+        <div className="col-span-12 lg:col-span-7">
           <div className="bg-surface rounded-3xl p-8 h-full flex flex-col justify-between">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {footerData.linkSections.map((section) => (
@@ -131,14 +130,14 @@ export default function Footer(): React.JSX.Element {
         {/* ========== ROW 2 ========== */}
         
         {/* Left Side - Dribbble & Behance */}
-        <div className="col-span-12 lg:col-span-4 grid grid-cols-2 gap-4">
+        <div className="col-span-12 lg:col-span-5 grid grid-cols-2 gap-4">
           {bottomSocials.map((social) => (
             <SocialCard key={social.id} social={social} />
           ))}
         </div>
         
         {/* Right Side - Newsletter + Copyright */}
-        <div className="col-span-12 lg:col-span-8 flex flex-col gap-4">
+        <div className="col-span-12 lg:col-span-7 flex flex-col gap-4">
           {/* Newsletter Card */}
           <div className="bg-surface rounded-3xl p-8 flex-grow flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div>

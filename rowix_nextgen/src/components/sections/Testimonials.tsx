@@ -1,7 +1,8 @@
 import React from 'react';
 import { useTestimonialsData } from '../../hooks/useMockData';
 import TestimonialCard from '../ui/TestimonialCard';
-import Button from '../ui/Button';
+import IconBox from '../ui/IconBox';
+import { ArrowUpRight } from 'lucide-react';
 
 export default function Testimonials(): React.JSX.Element {
   const { data: testimonialsData, loading, error } = useTestimonialsData();
@@ -15,12 +16,12 @@ export default function Testimonials(): React.JSX.Element {
             <h2 className="text-text-main text-3xl md:text-4xl font-bold uppercase">
               TESTIMONIALS
             </h2>
-            <div className="flex items-center gap-2">
-              <Button variant="icon" />
-              <span className="text-text-muted text-xs font-medium uppercase tracking-wide font-mono">
+            <button className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+              <IconBox icon={ArrowUpRight} variant="circular" size="md" />
+              <span className="text-md font-medium text-text-muted uppercase">
                 ALL TESTIMONIALS
               </span>
-            </div>
+            </button>
           </div>
           
           {/* Loading Grid */}
@@ -52,12 +53,12 @@ export default function Testimonials(): React.JSX.Element {
           <h2 className="text-text-main text-3xl md:text-4xl font-bold uppercase">
             TESTIMONIALS
           </h2>
-          <div className="flex items-center gap-2">
-            <Button variant="icon" />
-            <span className="text-text-muted text-xs font-medium uppercase tracking-wide font-mono">
+          <button className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+            <IconBox icon={ArrowUpRight} variant="circular" size="md" />
+            <span className="text-md font-medium text-text-muted uppercase">
               ALL TESTIMONIALS
             </span>
-          </div>
+          </button>
         </div>
         
         {/* Testimonials Grid */}

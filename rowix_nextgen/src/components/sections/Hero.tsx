@@ -10,8 +10,8 @@ export default function Hero(): React.JSX.Element {
   if (loading) {
     return (
       <section className="mx-auto pt-[120px] pb-8 px-4 md:px-0">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 items-stretch">
-          <div className="md:col-span-2 bg-surface p-4 rounded-2xl flex flex-col justify-center animate-pulse">
+        <div className="flex flex-col lg:grid lg:grid-cols-3 gap-5 items-stretch">
+          <div className="lg:col-span-2 bg-surface p-4 rounded-2xl flex flex-col justify-center animate-pulse order-1">
             <div className="pt-8 md:pt-12 lg:pt-20 px-4 md:px-8 lg:px-12">
               <div className="h-12 md:h-16 bg-ui-surface rounded-xl mb-6 md:mb-8 w-3/4"></div>
               <div className="h-6 md:h-8 bg-ui-surface rounded-xl mb-4 w-1/2"></div>
@@ -19,8 +19,9 @@ export default function Hero(): React.JSX.Element {
               <div className="h-4 bg-ui-surface rounded w-2/3 max-w-2xl"></div>
             </div>
           </div>
-          <div className="md:col-span-1 bg-surface rounded-2xl flex flex-col animate-pulse overflow-hidden">
-            <div className="h-[300px] md:h-auto md:aspect-[4/3] bg-ui-surface rounded-2xl m-4"></div>
+          <div className="lg:col-span-1 bg-surface rounded-2xl flex flex-col animate-pulse overflow-hidden order-2 lg:h-full 2xl:h-auto">
+            <div className="h-[300px] md:h-[280px] lg:flex-[3] lg:h-full 2xl:flex-none 2xl:h-auto 2xl:aspect-[4/3] bg-ui-surface rounded-2xl m-4 md:m-0"></div>
+            <div className="lg:flex-[1] 2xl:flex-none"></div>
           </div>
         </div>
       </section>
@@ -42,10 +43,10 @@ export default function Hero(): React.JSX.Element {
 
   return (
     <section className="mx-auto pt-[120px] pb-8 px-4 md:px-0">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-5 items-stretch">
+      <div className="flex flex-col lg:grid lg:grid-cols-3 gap-5 items-stretch">
         
         {/* Left Column - Text Content (2x width) */}
-        <div className="md:col-span-2 bg-surface p-4 rounded-2xl flex flex-col justify-center">
+        <div className="lg:col-span-2 bg-surface p-4 rounded-2xl flex flex-col justify-center order-1">
           <div className="pt-8 md:pt-12 lg:pt-20 px-4 md:px-8 lg:px-12">
           {/* Main Title */}
           <h1 className="text-text-main text-3xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 md:mb-8">
@@ -94,10 +95,10 @@ export default function Hero(): React.JSX.Element {
       </div>
         </div>
         
-         {/* Right Column - Image (1x width) */}
-         <div className="md:col-span-1 bg-surface rounded-2xl flex flex-col overflow-hidden">
-           <div className="mb-4 md:mb-6 relative m-4 md:m-0">
-             <div className="relative w-full h-[300px] md:h-auto md:aspect-[4/3] overflow-hidden rounded-2xl">
+         {/* Right Column - Image (1x width) - Below title on screens 1000px and below */}
+         <div className="lg:col-span-1 bg-surface rounded-2xl flex flex-col overflow-hidden order-2 lg:h-full 2xl:h-auto">
+           <div className="mb-4 md:mb-6 relative m-4 md:m-0 lg:flex-[3] 2xl:flex-none 2xl:mb-6">
+             <div className="relative w-full h-[300px] md:h-[280px] lg:h-full 2xl:h-auto 2xl:aspect-[4/3] overflow-hidden rounded-2xl">
                <img 
                  src={heroImg} 
                  alt={heroData.featuredProject.title} 
@@ -112,12 +113,14 @@ export default function Hero(): React.JSX.Element {
              </div>
            </div>
           {/* Title and Description below image */}
-          <h3 className="text-text-main font-semibold text-base md:text-lg mb-2 px-4">
-            {heroData.featuredProject.title}
-          </h3>
-          <p className="text-text-muted text-sm md:text-base px-4 mb-4 md:mb-6">
-            {heroData.featuredProject.category}
-          </p>
+          <div className="lg:flex-[1] 2xl:flex-none">
+            <h3 className="text-text-main font-semibold text-base md:text-lg mb-2 px-4">
+              {heroData.featuredProject.title}
+            </h3>
+            <p className="text-text-muted text-sm md:text-base px-4 mb-4 md:mb-6">
+              {heroData.featuredProject.category}
+            </p>
+          </div>
         </div>
       </div>
       

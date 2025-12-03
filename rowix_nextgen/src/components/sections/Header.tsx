@@ -77,7 +77,7 @@ export default function Header(): React.JSX.Element {
         <nav className="bg-surface/80 backdrop-blur-md rounded-2xl p-4 flex items-center justify-between animate-pulse">
           <div className="h-4 w-24 bg-ui-surface rounded"></div>
           <div className="flex items-center space-x-4">
-            <div className="hidden md:flex items-center space-x-4">
+            <div className="hidden lg:flex items-center space-x-4">
               {[...Array(6)].map((_, i) => (
                 <div key={i} className="h-10 w-20 bg-ui-surface rounded-md"></div>
               ))}
@@ -103,7 +103,7 @@ export default function Header(): React.JSX.Element {
         </div>
 
         <div className="flex items-center space-x-4">
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden lg:flex items-center space-x-4">
             {headerData.navLinks.map((link) => {
               // Extract section ID from href (e.g., "#home" -> "home")
               const sectionId = link.href.replace('#', '');
@@ -132,7 +132,7 @@ export default function Header(): React.JSX.Element {
 
           {/* Mobile Menu Toggle */}
           <button
-            className="md:hidden text-text-main focus:outline-none"
+            className="lg:hidden text-text-main focus:outline-none"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle mobile menu"
           >
@@ -176,7 +176,7 @@ export default function Header(): React.JSX.Element {
 
       {/* Mobile Menu Dropdown */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-surface/80 backdrop-blur-md rounded-b-2xl shadow-lg mt-2 py-2">
+        <div className="lg:hidden bg-surface/80 backdrop-blur-md rounded-b-2xl shadow-lg mt-2 py-2">
           {headerData.navLinks.map((link) => {
             // Extract section ID from href (e.g., "#home" -> "home")
             const sectionId = link.href.replace('#', '');

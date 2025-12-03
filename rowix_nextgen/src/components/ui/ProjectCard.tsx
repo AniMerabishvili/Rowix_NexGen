@@ -18,34 +18,38 @@ const iconMap: Record<string, LucideIcon> = {
 export default function ProjectCard({ project, isLoading = false }: ProjectCardProps) {
   if (isLoading) {
     return (
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 mb-8 items-stretch">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-20 items-stretch">
         {/* Block 1: Info Skeleton */}
-        <div className="col-span-1 lg:col-span-4 bg-surface rounded-md p-8 animate-pulse h-full">
-          <div className="flex items-center gap-4 mb-6">
-            <div className="w-12 h-12 bg-ui-surface rounded-lg"></div>
-            <div className="h-6 bg-ui-surface rounded w-40"></div>
-            <div className="ml-auto flex items-center gap-2">
-              <div className="w-14 h-14 bg-icon-surface/20 rounded-full border border-text-muted/20"></div>
-              <div className="h-4 bg-text-muted/20 rounded w-16"></div>
+        <div className="col-span-1 lg:col-span-4 bg-surface rounded-md p-6 animate-pulse h-full flex flex-col justify-between">
+          <div>
+            <div className="flex items-center gap-4 mb-4">
+              <div className="w-12 h-12 bg-ui-surface rounded-lg"></div>
+              <div className="h-6 bg-ui-surface rounded w-40"></div>
+              <div className="ml-auto flex items-center gap-2">
+                <div className="w-14 h-14 bg-icon-surface/20 rounded-full border border-text-muted/20"></div>
+                <div className="h-4 bg-text-muted/20 rounded w-16"></div>
+              </div>
             </div>
           </div>
-          <div className="space-y-3 mb-6">
-            <div className="h-8 bg-icon-surface/20 rounded-full w-48"></div>
-            <div className="h-8 bg-icon-surface/20 rounded-full w-40"></div>
-          </div>
-          <div className="space-y-2">
-            <div className="h-4 bg-ui-surface rounded w-full"></div>
-            <div className="h-4 bg-ui-surface rounded w-3/4"></div>
+          <div>
+            <div className="space-y-3 mb-4">
+              <div className="h-8 bg-icon-surface/20 rounded-full w-48"></div>
+              <div className="h-8 bg-icon-surface/20 rounded-full w-40"></div>
+            </div>
+            <div className="space-y-2">
+              <div className="h-4 bg-ui-surface rounded w-full"></div>
+              <div className="h-4 bg-ui-surface rounded w-3/4"></div>
+            </div>
           </div>
         </div>
 
         {/* Block 2: Image Skeleton */}
-        <div className="col-span-1 lg:col-span-4 bg-surface rounded-md h-full animate-pulse"></div>
+        <div className="col-span-1 lg:col-span-4 bg-surface rounded-md animate-pulse h-full"></div>
 
         {/* Block 3: Details Skeleton */}
-        <div className="col-span-12 lg:col-span-3 flex flex-col gap-4 h-full">
+        <div className="col-span-12 lg:col-span-4 h-full flex flex-col gap-4">
           {/* Technologies Skeleton */}
-          <div className="bg-surface rounded-3xl p-8 animate-pulse flex-shrink-0 flex flex-col justify-center">
+          <div className="bg-surface rounded-md p-6 animate-pulse flex-1 flex flex-col justify-center">
             <div className="h-4 bg-surface/20 rounded w-32 mb-4"></div>
             <div className="flex flex-wrap gap-2">
               {[...Array(4)].map((_, i) => (
@@ -55,19 +59,17 @@ export default function ProjectCard({ project, isLoading = false }: ProjectCardP
           </div>
           
           {/* Team Members Skeleton */}
-          <div className="bg-surface rounded-3xl p-8 animate-pulse flex-shrink-0 flex flex-col justify-center">
-            <div className="h-4 bg-surface/20 rounded w-28 mb-4"></div>
+          <div className="bg-surface rounded-md p-6 animate-pulse flex-1 flex items-center justify-between">
+            <div className="h-4 bg-surface/20 rounded w-28"></div>
             <div className="flex items-center -space-x-3">
               {[...Array(5)].map((_, i) => (
-                <div key={i} className="w-12 h-12 bg-surface/20 rounded-full border-2 border-background flex-shrink-0"></div>
+                <div key={i} className="w-12 h-12 bg-surface/20 rounded-md border-2 border-surface flex-shrink-0"></div>
               ))}
             </div>
           </div>
           
           {/* Button Skeleton */}
-          <div className="bg-surface rounded-3xl p-8 animate-pulse flex-shrink-0 flex flex-col justify-center mt-auto">
-            <div className="h-12 bg-surface/20 rounded-md"></div>
-          </div>
+          <div className="h-12 bg-surface/20 rounded-md animate-pulse flex-shrink-0"></div>
         </div>
       </div>
     );
@@ -76,44 +78,49 @@ export default function ProjectCard({ project, isLoading = false }: ProjectCardP
   const IconComponent = iconMap[project.icon] || Star;
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 mb-8 items-stretch">
+    <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-8 items-stretch">
       {/* Block 1: Project Info */}
-      <div className="col-span-1 lg:col-span-4 bg-surface rounded-md p-8 flex flex-col h-full">
-        {/* Header */}
-        <div className="flex items-center gap-4 mb-6">
-          {/* Icon Box */}
-          <IconBox icon={IconComponent} />
-          {/* Title */}
-          <h3 className="text-text-main text-xl font-bold uppercase whitespace-nowrap">
-            {project.title}
-          </h3>
-          {/* Details Button */}
-          <button className="ml-auto flex items-center gap-2 hover:opacity-80 transition-opacity">
-            <IconBox icon={ArrowUpRight} variant="circular" size="md" />
-            <span className="text-md font-medium text-text-muted uppercase">
-              DETAILS
-            </span>
-          </button>
+      <div className="col-span-1 lg:col-span-4 bg-surface rounded-md p-6 h-full flex flex-col justify-around">
+        {/* Top Part: Header */}
+        <div>
+          <div className="flex items-center gap-4">
+            {/* Icon Box */}
+            <IconBox icon={IconComponent} />
+            {/* Title */}
+            <h3 className="text-text-main text-xl font-bold uppercase whitespace-nowrap">
+              {project.title}
+            </h3>
+            {/* Details Button */}
+            <button className="ml-auto flex items-center gap-2 hover:opacity-80 transition-opacity">
+              <IconBox icon={ArrowUpRight} variant="circular" size="md" />
+              <span className="text-md font-medium text-text-muted uppercase">
+                DETAILS
+              </span>
+            </button>
+          </div>
         </div>
 
-        {/* Tags */}
-        <div className=" mb-6">
-          <div className="inline-flex items-center bg-icon-surface rounded-full px-4 py-2">
-            <span className="text-text-muted text-xs mr-2">Category •</span>
-            <span className="text-text-main text-sm font-medium">{project.category}</span>
-          </div>
-          <div className="block">
-            <div className="inline-flex items-center bg-icon-surface rounded-full px-4 py-2 mt-4">
-              <span className="text-text-muted text-xs mr-2">Time Taken •</span>
-              <span className="text-text-main text-sm font-medium">{project.timeTaken}</span>
+        {/* Bottom Part: Tags and Description */}
+        <div>
+          {/* Tags */}
+          <div className="mb-4">
+            <div className="inline-flex items-center bg-icon-surface rounded-full px-4 py-2">
+              <span className="text-text-muted text-xs mr-2">Category •</span>
+              <span className="text-text-main text-sm font-medium">{project.category}</span>
+            </div>
+            <div className="block">
+              <div className="inline-flex items-center bg-icon-surface rounded-full px-4 py-2 mt-4">
+                <span className="text-text-muted text-xs mr-2">Time Taken •</span>
+                <span className="text-text-main text-sm font-medium">{project.timeTaken}</span>
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Description */}
-        <p className="text-text-main/60 text-sm leading-relaxed">
-          {project.description}
-        </p>
+          {/* Description */}
+          <p className="text-text-main/60 text-sm leading-relaxed mb-0">
+            {project.description}
+          </p>
+        </div>
       </div>
 
       {/* Block 2: Project Image */}
@@ -121,14 +128,14 @@ export default function ProjectCard({ project, isLoading = false }: ProjectCardP
         <img 
           src={imageMap[project.image] || project.image} 
           alt={project.title}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover rounded-md"
         />
       </div>
 
       {/* Block 3: Technologies & Team */}
-      <div className="col-span-12 lg:col-span-3 flex flex-col gap-4 h-full">
+      <div className="col-span-12 lg:col-span-4 h-full flex flex-col gap-4">
         {/* Widget 1: Technologies */}
-        <div className="bg-background rounded-3xl p-8 flex flex-col justify-center flex-shrink-0">
+        <div className="bg-surface rounded-md p-6 flex flex-col justify-center flex-1">
           <h4 className="text-text-main text-sm font-bold uppercase mb-4">
             TECHNOLOGIES USED
           </h4>
@@ -145,15 +152,15 @@ export default function ProjectCard({ project, isLoading = false }: ProjectCardP
         </div>
 
         {/* Widget 2: Team Members */}
-        <div className="bg-background rounded-3xl p-8 flex flex-col justify-center flex-shrink-0">
-          <h4 className="text-text-main text-sm font-bold uppercase mb-4">
+        <div className="bg-surface rounded-md p-6 flex items-center gap-8 flex-1">
+          <h4 className="text-text-main text-sm font-bold uppercase">
             TEAM MEMBERS
           </h4>
           <div className="flex items-center -space-x-3">
             {project.teamMembers?.slice(0, 5).map((member: string, index: number) => (
               <div
                 key={index}
-                className="w-12 h-12 rounded-full bg-active-orange border-2 border-background flex items-center justify-center overflow-hidden flex-shrink-0"
+                className="w-12 h-12 rounded-full bg-active-orange border-2 border-surface flex items-center justify-center overflow-hidden flex-shrink-0"
               >
                 <img
                   src={member}
@@ -165,12 +172,10 @@ export default function ProjectCard({ project, isLoading = false }: ProjectCardP
           </div>
         </div>
 
-        {/* Widget 3: CTA Container */}
-        <div className="bg-background rounded-3xl p-8 flex flex-col justify-center mt-auto flex-shrink-0">
-          <button className="w-full bg-primary text-background font-bold text-sm uppercase py-4 rounded-md hover:opacity-90 transition-opacity">
-            BOOK A CALL
-          </button>
-        </div>
+        {/* Button */}
+        <button className="w-full bg-primary text-background font-bold text-sm uppercase py-4 rounded-md hover:opacity-90 transition-opacity flex-shrink-0">
+          BOOK A CALL
+        </button>
       </div>
     </div>
   );

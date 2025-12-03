@@ -18,9 +18,9 @@ const iconMap: Record<string, LucideIcon> = {
 export default function ProjectCard({ project, isLoading = false }: ProjectCardProps) {
   if (isLoading) {
     return (
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 mb-8">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 mb-8 items-stretch">
         {/* Block 1: Info Skeleton */}
-        <div className="col-span-1 lg:col-span-4 bg-surface rounded-md p-8 animate-pulse h-64 lg:h-80">
+        <div className="col-span-1 lg:col-span-4 bg-surface rounded-md p-8 animate-pulse h-full">
           <div className="flex items-center gap-4 mb-6">
             <div className="w-12 h-12 bg-ui-surface rounded-lg"></div>
             <div className="h-6 bg-ui-surface rounded w-40"></div>
@@ -40,33 +40,33 @@ export default function ProjectCard({ project, isLoading = false }: ProjectCardP
         </div>
 
         {/* Block 2: Image Skeleton */}
-        <div className="col-span-1 lg:col-span-4 bg-surface rounded-md h-64 lg:h-80 animate-pulse"></div>
+        <div className="col-span-1 lg:col-span-4 bg-surface rounded-md h-full animate-pulse"></div>
 
         {/* Block 3: Details Skeleton */}
-        <div className="col-span-1 lg:col-span-4 flex flex-col gap-4 h-64 lg:h-80">
+        <div className="col-span-12 lg:col-span-3 flex flex-col gap-4 h-full">
           {/* Technologies Skeleton */}
-          <div className="bg-surface rounded-3xl p-8 animate-pulse flex-shrink-0">
-            <div className="h-4 bg-ui-surface rounded w-32 mb-4"></div>
+          <div className="bg-surface rounded-3xl p-8 animate-pulse flex-shrink-0 flex flex-col justify-center">
+            <div className="h-4 bg-surface/20 rounded w-32 mb-4"></div>
             <div className="flex flex-wrap gap-2">
               {[...Array(4)].map((_, i) => (
-                <div key={i} className="h-8 bg-background/20 rounded-full w-16"></div>
+                <div key={i} className="h-8 bg-surface/20 rounded-full w-16"></div>
               ))}
             </div>
           </div>
           
           {/* Team Members Skeleton */}
-          <div className="bg-surface rounded-3xl p-8 animate-pulse flex-shrink-0">
-            <div className="h-4 bg-ui-surface rounded w-28 mb-4"></div>
-            <div className="flex items-center gap-2">
+          <div className="bg-surface rounded-3xl p-8 animate-pulse flex-shrink-0 flex flex-col justify-center">
+            <div className="h-4 bg-surface/20 rounded w-28 mb-4"></div>
+            <div className="flex items-center -space-x-3">
               {[...Array(5)].map((_, i) => (
-                <div key={i} className="w-12 h-12 bg-ui-surface rounded-full border-2 border-surface flex-shrink-0"></div>
+                <div key={i} className="w-12 h-12 bg-surface/20 rounded-full border-2 border-background flex-shrink-0"></div>
               ))}
             </div>
           </div>
           
           {/* Button Skeleton */}
-          <div className="bg-surface rounded-3xl p-8 animate-pulse flex-grow flex flex-col justify-end">
-            <div className="h-12 bg-ui-surface rounded-md"></div>
+          <div className="bg-surface rounded-3xl p-8 animate-pulse flex-shrink-0 flex flex-col justify-center mt-auto">
+            <div className="h-12 bg-surface/20 rounded-md"></div>
           </div>
         </div>
       </div>
@@ -76,9 +76,9 @@ export default function ProjectCard({ project, isLoading = false }: ProjectCardP
   const IconComponent = iconMap[project.icon] || Star;
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 mb-8">
+    <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 mb-8 items-stretch">
       {/* Block 1: Project Info */}
-      <div className="col-span-1 lg:col-span-4 bg-surface rounded-md p-8 flex flex-col h-64 lg:h-80">
+      <div className="col-span-1 lg:col-span-4 bg-surface rounded-md p-8 flex flex-col h-full">
         {/* Header */}
         <div className="flex items-center gap-4 mb-6">
           {/* Icon Box */}
@@ -117,7 +117,7 @@ export default function ProjectCard({ project, isLoading = false }: ProjectCardP
       </div>
 
       {/* Block 2: Project Image */}
-      <div className="col-span-1 lg:col-span-4 bg-surface rounded-md overflow-hidden h-64 lg:h-80">
+      <div className="col-span-1 lg:col-span-4 bg-surface rounded-md overflow-hidden h-full">
         <img 
           src={imageMap[project.image] || project.image} 
           alt={project.title}
@@ -126,9 +126,9 @@ export default function ProjectCard({ project, isLoading = false }: ProjectCardP
       </div>
 
       {/* Block 3: Technologies & Team */}
-      <div className="col-span-1 lg:col-span-4 flex flex-col gap-4 h-64 lg:h-80">
-        {/* Technologies */}
-        <div className="bg-surface rounded-3xl p-8 flex-shrink-0">
+      <div className="col-span-12 lg:col-span-3 flex flex-col gap-4 h-full">
+        {/* Widget 1: Technologies */}
+        <div className="bg-background rounded-3xl p-8 flex flex-col justify-center flex-shrink-0">
           <h4 className="text-text-main text-sm font-bold uppercase mb-4">
             TECHNOLOGIES USED
           </h4>
@@ -136,7 +136,7 @@ export default function ProjectCard({ project, isLoading = false }: ProjectCardP
             {project.technologies.map((tech, index) => (
               <span
                 key={index}
-                className="bg-icon-surface text-white text-xs font-medium px-4 py-2 rounded-full"
+                className="bg-surface text-white text-xs font-medium px-4 py-2 rounded-full"
               >
                 {tech}
               </span>
@@ -144,16 +144,16 @@ export default function ProjectCard({ project, isLoading = false }: ProjectCardP
           </div>
         </div>
 
-        {/* Team Members */}
-        <div className="bg-surface rounded-3xl p-8 flex-shrink-0">
+        {/* Widget 2: Team Members */}
+        <div className="bg-background rounded-3xl p-8 flex flex-col justify-center flex-shrink-0">
           <h4 className="text-text-main text-sm font-bold uppercase mb-4">
             TEAM MEMBERS
           </h4>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center -space-x-3">
             {project.teamMembers?.slice(0, 5).map((member: string, index: number) => (
               <div
                 key={index}
-                className="w-12 h-12 rounded-full bg-active-orange border-2 border-surface flex items-center justify-center overflow-hidden flex-shrink-0"
+                className="w-12 h-12 rounded-full bg-active-orange border-2 border-background flex items-center justify-center overflow-hidden flex-shrink-0"
               >
                 <img
                   src={member}
@@ -163,11 +163,10 @@ export default function ProjectCard({ project, isLoading = false }: ProjectCardP
               </div>
             ))}
           </div>
-          
         </div>
 
-        {/* CTA Button */}
-        <div className="bg-surface rounded-3xl p-8 flex-grow flex flex-col justify-end">
+        {/* Widget 3: CTA Container */}
+        <div className="bg-background rounded-3xl p-8 flex flex-col justify-center mt-auto flex-shrink-0">
           <button className="w-full bg-primary text-background font-bold text-sm uppercase py-4 rounded-md hover:opacity-90 transition-opacity">
             BOOK A CALL
           </button>

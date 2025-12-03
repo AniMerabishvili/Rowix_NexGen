@@ -1,3 +1,4 @@
+import React from 'react';
 import Header from './components/sections/Header';
 import Hero from './components/sections/Hero';
 import Stats from './components/sections/Stats';
@@ -13,11 +14,17 @@ function App() {
     <div className="min-h-screen">
       <div className="w-[95%] mx-auto">
         <Header />
-        <Hero />
+        <div id="home">
+          <Hero />
+        </div>
         <Stats />
         <Reasons />
-        <Services />
-        <Works />
+        <div id="services">
+          <Services />
+        </div>
+        <div id="projects">
+          <Works />
+        </div>
         <Testimonials />
         <FAQ />
         <Footer />

@@ -13,17 +13,18 @@ export default {
         'ui-surface': '#0F0F0F',
         'text-main': '#F9EFEC',
         'text-muted': '#676665',
-        'active-orange': '#E7BEB1', // Active page color
-        'light-orange': '#F4D4C7'
+        'active-orange': '#E7BEB1',
+        'light-orange': '#DA9E8B',
+        'icon-surface': '#1F1F1F'
       },
       fontFamily: {
         sans: ['Roboto Flex', 'sans-serif'],
         mono: ['Roboto Mono', 'monospace'],
       },
       fontWeight: {
-        normal: '400',    // paragraphs
-        medium: '500',    // medium titles
-        semibold: '600',  // titles
+        normal: '400',
+        medium: '500',
+        semibold: '600',
       },
     },
   },

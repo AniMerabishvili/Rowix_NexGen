@@ -5,6 +5,10 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
   body {
     background-color: #0F0F0F; /* bg-background */
     color: #F9EFEC; /* text-text-main */

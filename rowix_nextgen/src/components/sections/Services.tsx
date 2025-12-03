@@ -1,12 +1,13 @@
+import React from 'react';
 import { useServicesData } from '../../hooks/useMockData';
 import ServiceCard from '../ui/ServiceCard';
 
-export default function Services() {
+export default function Services(): React.JSX.Element {
   const { data: servicesData, loading, error } = useServicesData();
 
   if (loading) {
     return (
-      <section className="py-4 bg-background border-2 border-surface rounded-2xl">
+      <section className="my-20 py-4 bg-background border-2 border-surface rounded-2xl">
         <div className="mx-auto px-6">
           {/* Section Title */}
           <div className="bg-surface rounded-2xl p-12 mb-4">
@@ -28,7 +29,7 @@ export default function Services() {
 
   if (error) {
     return (
-      <section className="py-4 bg-background border-2 border-surface rounded-2xl">
+      <section className="my-20 py-4 bg-background border-2 border-surface rounded-2xl">
         <div className="mx-auto px-6 text-center">
           <div className="text-text-muted">Error loading services: {error}</div>
         </div>
@@ -37,7 +38,7 @@ export default function Services() {
   }
 
   return (
-    <section className="py-4 bg-background border-2 border-surface rounded-2xl">
+    <section className="my-20 py-4 bg-background border-2 border-surface rounded-2xl">
       <div className="mx-auto px-6">
           {/* Section Title */}
           <div className="bg-surface rounded-2xl p-12 mb-4">

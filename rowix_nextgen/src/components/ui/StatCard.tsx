@@ -1,4 +1,7 @@
-export default function StatCard({ label, value, isLoading = false }) {
+import React from 'react';
+import { StatCardProps } from '../../types';
+
+export default function StatCard({ label, value, isLoading = false }: StatCardProps) {
   if (isLoading) {
     return (
       <div className="bg-surface rounded-2xl p-3 flex flex-col items-center justify-center text-center animate-pulse">
@@ -9,9 +12,9 @@ export default function StatCard({ label, value, isLoading = false }) {
   }
 
   return (
-     <div className="bg-surface rounded-2xl p-3 flex flex-col items-center justify-center text-center">
+     <div className="bg-icon-surface rounded-2xl p-3 flex flex-col items-center justify-center text-center">
       {/* Label */}
-      <div className="text-text-mono text-md font-semibold mb-2 font-mono font-normal">
+      <div className="text-text-mono text-sm mb-2 font-mono font-normal">
         {label}
       </div>
       

@@ -1,12 +1,13 @@
+import React from 'react';
 import { useWhyUsData } from '../../hooks/useMockData';
 import ReasonCard from '../ui/ReasonCard';
 
-export default function Reasons() {
+export default function Reasons(): React.JSX.Element {
   const { data: whyUsData, loading, error } = useWhyUsData();
 
   if (loading) {
     return (
-      <section className="my-16 py-4 bg-background border-2 border-surface rounded-2xl">
+      <section className="my-20 py-4 bg-background border-2 border-surface rounded-2xl">
         <div className="mx-auto px-6">
           {/* Section Title */}
           <div className="bg-surface rounded-2xl p-8 mb-16">
@@ -28,8 +29,8 @@ export default function Reasons() {
 
   if (error) {
     return (
-      <section className="my-16 py-4 bg-background">
-        <div className="max-w-7xl mx-auto px-6 text-center">
+      <section className="my-20 py-4 bg-background">
+        <div className="mx-auto px-6 text-center">
           <div className="text-text-muted">Error loading reasons: {error}</div>
         </div>
       </section>
@@ -37,7 +38,7 @@ export default function Reasons() {
   }
 
   return (
-    <section className="my-16 py-4 bg-background border-2 border-surface rounded-2xl">
+    <section className="my-20 py-4 bg-background border-2 border-surface rounded-2xl">
       <div className="mx-auto px-6">
         {/* Section Title */}
         <div className="bg-surface rounded-2xl p-12 mb-4">

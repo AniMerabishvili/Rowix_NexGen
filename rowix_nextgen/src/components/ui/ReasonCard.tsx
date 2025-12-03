@@ -1,6 +1,8 @@
+import React from 'react';
 import Button from './Button';
+import { ReasonCardProps } from '../../types';
 
-export default function ReasonCard({ title, description, isLoading = false }) {
+export default function ReasonCard({ title, description, isLoading = false }: ReasonCardProps) {
   if (isLoading) {
     return (
       <div className="bg-surface rounded-3xl p-8 animate-pulse">

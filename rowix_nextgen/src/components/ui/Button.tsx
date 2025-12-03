@@ -1,6 +1,7 @@
+import React from 'react';
+import { ButtonProps } from '../../types';
 
-
-export default function Button({ children, variant = "primary", className = "", ...props }) {
+export default function Button({ children, variant = "primary", className = "", ...props }: ButtonProps) {
   const baseStyles = "px-6 py-3 rounded font-medium transition-all duration-300";
   
   const variants = {
@@ -11,13 +12,11 @@ export default function Button({ children, variant = "primary", className = "", 
 
   if (variant === "icon") {
     return (
-      
       <button 
-      
         className={`${baseStyles} ${variants[variant]} ${className}`} 
         {...props}
       >
-         <span className="text-light-orange text-xl font-bold">↗</span>
+        <span className="text-light-orange text-xl font-bold">↗</span>
       </button>
     );
   }

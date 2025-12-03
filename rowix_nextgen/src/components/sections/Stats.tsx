@@ -1,8 +1,9 @@
+import React from 'react';
 import { useStatsData } from '../../hooks/useMockData';
 import StatCard from '../ui/StatCard';
 import Button from '../ui/Button';
 
-export default function Stats() {
+export default function Stats(): React.JSX.Element {
   const { data: statsData, loading, error } = useStatsData();
 
   if (loading) {
@@ -31,7 +32,7 @@ export default function Stats() {
   }
 
   return (
-    <section className="py-6">
+    <section className="py-8">
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 border-2 border-surface rounded-2xl p-6">
         
         {/* Statistics Cards (1-5) */}
@@ -49,7 +50,7 @@ export default function Stats() {
           {/* Icon and Text Row */}
           <div className="flex items-center gap-2">
             <Button variant="icon" />
-            <div className="text-text-mono text-md font-semibold mb-2 font-mono font-normal">
+            <div className="text-text-mono text-md font-mono font-normal">
               KNOW MORE
             </div>
           </div>
